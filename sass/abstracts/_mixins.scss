@@ -28,9 +28,11 @@ Breakpoints argument choices:
 -tab-land
 -big-desktop
 
-ORDER: base + typography > general layout + grid > page layout > components
 */
 @mixin respond($breakpoint){
+  @if $breakpoint == mini-phone{
+    @media (max-width:25em) {@content}; //400px
+  }
   @if $breakpoint == phone{
     @media (max-width:37.5em) {@content}; //600px
   }

@@ -1,95 +1,86 @@
-.popup{
-  height:100vh;
+.popup {
+  height: 100vh;
   width: 100%;
   position: fixed;
-  top:0;
-  left:0;
-  background-color:rgba($color-black, .8);
+  top: 0;
+  left: 0;
+  background-color: rgba($color-black, 0.8);
   z-index: 9999;
   opacity: 0;
-  visibility:hidden;
-  transition: all .3s;
+  visibility: hidden;
+  transition: all 0.3s;
 
-    
-
-
-  &__content{
+  &__content {
     @include absCenter;
-    width:60%;
-    height:65%;
-    background-color:$color-white;
-    box-shadow:0 2rem 4rem rgba($color-black, .2);
+    width: 60%;
+    height: 65%;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
     border-radius: 3px;
-    display:table;
+    display: table;
     overflow: hidden;
-    transform: translate(-50%, -50%) scale(.25);
+    transform: translate(-50%, -50%) scale(0.25);
     opacity: 0;
-    transition: all .4s .2s;
+    transition: all 0.4s 0.2s;
     position: relative;
-    background-image:linear-gradient(to right bottom,rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero.jpg);
-        
-  }
- 
-  
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      ),
+      url(../img/hero.jpg);
 
-    
- 
-    &__text{
-      position: absolute;
-      top:50%;
-      left:50%;
-      transform: translate(-50%,-50%);
-      background-color: rgba(255, 255, 255,.6 );
-      padding:3rem;
-      line-height: 2;
-      height:55%;
-      text-align: center;
-      border-radius: 3px;
-      &--text{
-        padding: 1rem 2rem 1rem 2rem;
-        @include respond(tab-land){
-          padding:0 2rem 3rem 2rem;
-          font-size: 1.4rem;
-        }
-       
-        @include respond(phone){
-          padding:0 ;
-          font-size: 1.4rem;
-        }
-               
-      }
-    
-  
+    @include respond(phone) {
+      width: 80%;
+      height: 70%;
+
     }
-     
-  &:target{
-    opacity: 1;
-     visibility:visible; 
-   }
 
-   &:target &__content {
-    opacity:1;
-    transform:translate(-50%, -50%) scale(1);
     
   }
+
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 3rem;
+    line-height: 2;
+    height: 55%;
+    text-align: center;
+    border-radius: 3px;
+    @include respond(phone) {
+      width: 70%;
  
-   &__close{
-     &:link,
-     &:visited{
-       color:$color-grey-dark;
-       font-size:3rem;
-       position: absolute;
-       top:2.5rem;
-       right:2.5rem;
-       text-decoration: none;
-       display: inline-block;
-       transition: all .2s;
-       line-height:1;
-       
-     }
-     &:hover{
-       color:$color-primary;
-     }
-   }
- 
+    }
+
+    &--text {
+      font-size: 1.4rem;
+      padding: 1rem 2rem 1rem 2rem;
+      @include respond(tab-land) {
+        padding: 0 2rem 3rem 2rem;
+        font-size: 1.4rem;
+      }
+
+      @include respond(phone) {
+        padding: 0 0.5rem 1rem 0.5rem;
+        font-size: 1.5rem;
+      }
+      @include respond(mini-phone) {
+        padding: 0;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:target &__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 }

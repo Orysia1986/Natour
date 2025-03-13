@@ -5,9 +5,18 @@
   "scripts": {
     "compile:sass": "sass sass/main.scss css/style.css -w"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Orysia1986/Natour.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Orysia1986/Natour/issues"
+  },
+  "homepage": "https://github.com/Orysia1986/Natour#readme",
+  "description": "",
   "devDependencies": {
-    "sass": "^1.84.0"
+    "sass": "^1.85.1"
   }
 }

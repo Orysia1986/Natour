@@ -4,6 +4,8 @@
   margin-top: -30vh;
   padding-bottom:50rem;
 
+ 
+
   @include respond(tab-land){
     padding-bottom:90rem;
     
@@ -11,12 +13,20 @@
 
 
   @include respond(tab-port){
-    padding-bottom:90rem;
+    padding-bottom:80rem;
+    margin-top:-25rem;
   }
 
  
+  @include respond(phone){
+    padding-bottom:80rem;
+    margin-top:-30rem;
+  }
+  @include respond(mini-phone){
+    padding-bottom:90rem;
+    margin-top:-30rem;
+  }
 
-}
 
 .section-features {
  margin-top:-10rem;
@@ -37,13 +47,18 @@
  }
 
  @include respond(tab-land){
-  height:170vh;
+  height:150vh;
   max-height:none;
   padding:12rem 2rem 25rem 2rem
   
 }
  @include respond(tab-port){
-  height:130vh;
+  height:110vh;
+  max-height:none;
+  padding-top:6rem;
+}
+ @include respond(mini-phone){
+  height:125vh;
   max-height:none;
   padding-top:6rem;
 }
@@ -71,7 +86,7 @@
   position: relative;
 
   @include respond(tab-port){
-    padding:0;
+    padding:0 0 -4rem 0;
  
  
   }
@@ -157,4 +172,5 @@
   
 }
 
+}
 }
